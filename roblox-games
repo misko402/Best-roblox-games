@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Roblox Games</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0078d7;
+        }
+        .game-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+        .game {
+            flex: 1 1 calc(33.333% - 1rem);
+            background-color: #f3f4f6;
+            border: 1px solid #e1e1e1;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+        .game:hover {
+            transform: scale(1.05);
+        }
+        .game img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+        .game-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            max-width: 500px;
+            width: 90%;
+        }
+        .popup img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .popup .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Top Roblox Games</h1>
+        <p>Discover the most popular and engaging games on Roblox!</p>
+    </header>
+    <div class="container">
+        <ul class="game-list">
+            <li class="game" onclick="showPopup('Adopt Me!', 'https://www.roblox.com/games/920587237/Adopt-Me', '/mnt/data/Sn%C3%ADmka%20obrazovky%202024-12-23%20111636.png', 'Adopt pets, build your house, and explore a vibrant world!')">
+                <img src="/mnt/data/Sn%C3%ADmka%20obrazovky%202024-12-23%20111636.png" alt="Adopt Me!">
+                <div class="game-title">Adopt Me!</div>
+            </li>
+            <li class="game" onclick="showPopup('Brookhaven', 'https://www.roblox.com/games/4924922222/Brookhaven-RP', '/mnt/data/Sn%C3%ADmka%20obrazovky%202024-12-23%20111802.png', 'Roleplay in a lively town, drive cars, and decorate your home!')">
+                <img src="/mnt/data/Sn%C3%ADmka%20obrazovky%202024-12-23%20111802.png" alt="Brookhaven RP">
+                <div class="game-title">Brookhaven</div>
+            </li>
+            <li class="game" onclick="showPopup('Tower of Hell', 'https://www.roblox.com/games/1962086868/Tower-of-Hell', '/mnt/data/Sn%C3%ADmka%20obrazovky%202024-12-23%20111905.png', 'Test your parkour skills in this challenging obby!')">
+                <img src="/mnt/data/Sn%C3%ADmka%20obrazovky%202024-12-23%20111905.png" alt="Tower of Hell">
+                <div class="game-title">Tower of Hell</div>
+            </li>
+            <li class="game" onclick="showPopup('Ohio', 'https://www.roblox.com/games/7239319209/Ohio', '/mnt/data/image.png', 'Explore the chaos of Ohio with action-packed fun!')">
+                <img src="/mnt/data/image.png" alt="Ohio">
+                <div class="game-title">Ohio</div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <button class="close" onclick="closePopup()">&times;</button>
+            <h2 id="popup-title"></h2>
+            <img id="popup-image" src="" alt="">
+            <p id="popup-description"></p>
+            <a id="popup-link" href="" target="_blank" style="color: #0078d7; font-weight: bold; text-decoration: none;">Play Now</a>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(title, link, image, description) {
+            document.getElementById('popup-title').textContent = title;
+            document.getElementById('popup-link').href = link;
+            document.getElementById('popup-image').src = image;
+            document.getElementById('popup-description').textContent = description;
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
